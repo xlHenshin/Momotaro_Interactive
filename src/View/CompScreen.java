@@ -14,10 +14,11 @@ public class CompScreen {
 		
 		this.app = app;
 		compControl = new Controller();
+		composition = app.loadImage("../resources/Composition.png");
 	}
 	
 	public void paintComposition() {
-		app.rect(200, 200, 200, 200);
+		app.image(composition,0,0);
 	}
 	
 	public void paintObject() {

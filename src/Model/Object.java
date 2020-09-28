@@ -2,7 +2,7 @@ package Model;
 
 import processing.core.PApplet;
 
-public class Object {
+public abstract class Object {
 
 	PApplet app;
 	

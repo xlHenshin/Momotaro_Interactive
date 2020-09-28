@@ -36,9 +36,7 @@ public class Main extends PApplet {
 		
 		
 		for (String element : taleWords) {
-			
 			System.out.println(element);
-			
 		}
 		
 		
@@ -51,6 +49,23 @@ public class Main extends PApplet {
 			
 			if(element.equals("velero")) {
 				ellipse(40,50,40,40);
+				
+			}
+			
+			if(element.equals("irrumpieron")) {
+				ellipse(100,200,150,150);
+			}
+			
+			if(element.equals("siesta")) {
+				rect(500, 500, 100, 100);
+			}
+			
+			if(element.equals("bramaron")) {
+				rect(800, 600, 100, 100);
+			}
+			
+			if(element.equals("monedas")) {
+				ellipse(1100,300, 60, 120);
 			}
 			
 		}
