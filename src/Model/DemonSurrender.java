@@ -6,8 +6,8 @@ public class DemonSurrender extends Object {
 
 	PApplet app;
 	
-	public DemonSurrender(int posx, int posy, int speed, int sizeX, int sizeY, PApplet app) {
-		super(posx, posy, speed, sizeX, sizeY);
+	public DemonSurrender(int posx, int posy, int sizex, int sizey, PApplet app) {
+		super(posx, posy, sizex, sizey);
 		this.app = app;
 	}
 

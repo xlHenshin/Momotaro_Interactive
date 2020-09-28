@@ -2,15 +2,18 @@ package Model;
 
 import java.util.ArrayList;
 
+import processing.core.PApplet;
+
 public class Word {
-	
+	  
+	PApplet app;
 	public Object object;
-	ArrayList<String> tale;
+	String [] tale;
 	
 	public Word () {
 		
 		object = new Object(500, 400, 1, 1);
-		tale = new ArrayList<String>();
+		
 	}
 	
 	public void paintObject() {

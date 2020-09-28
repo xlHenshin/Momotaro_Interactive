@@ -1,20 +1,21 @@
 package Controller;
 
-import Model.Word;
+import Model.Object;
+
 
 public class Controller {
 
-	public Word word;
+	public Object object;
 	
 	public Controller() {
 		
-		word = new Word();
+		
 		
 	}
 	
 	public void paintObject() {
 		
-		word.paintObject();
+		object.paintObject();
 		
 	}
 	
