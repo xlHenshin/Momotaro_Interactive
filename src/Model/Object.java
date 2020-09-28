@@ -2,7 +2,7 @@ package Model;
 
 import processing.core.PApplet;
 
-public abstract class Object {
+public class Object {
 
 	PApplet app;
 	
@@ -12,16 +12,18 @@ public abstract class Object {
 	private int sizeX;
 	private int sizeY;
 	
-	public Object (int posx, int posy, int speed, int sizeX, int sizeY) {
+	public Object (int posx, int posy, int sizex, int sizey) {
 		this.posX = posx;
 		this.posY = posy;
+		this.sizeX = sizex;
+		this.sizeY = sizey;
+		
 		this.speed = 5;
-		this.sizeX = 1;
-		this.sizeY =1;
 		
 	}
 	
-	public abstract void paintObject();
+	public void paintObject() {
+	}
 	
 	public void objectInteraction() {
 		

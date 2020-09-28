@@ -13,10 +13,18 @@ public class CompScreen {
 	public CompScreen (PApplet app) {
 		
 		this.app = app;
-		
+		compControl = new Controller();
 	}
 	
-
+	public void paintComposition() {
+		app.rect(200, 200, 200, 200);
+	}
+	
+	public void paintObject() {
+		
+		compControl.paintObject();
+		
+	}
 	
 
 	
