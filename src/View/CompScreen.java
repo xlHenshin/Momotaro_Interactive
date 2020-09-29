@@ -8,12 +8,12 @@ public class CompScreen {
 	
 	PApplet app;
 	PImage composition;
-	public Controller compControl;
+	public Controller control;
 	
 	public CompScreen (PApplet app) {
 		
 		this.app = app;
-		compControl = new Controller();
+		control = new Controller(app);
 		composition = app.loadImage("../resources/Composition.png");
 	}
 	
@@ -21,10 +21,24 @@ public class CompScreen {
 		app.image(composition,0,0);
 	}
 	
-	public void paintObject() {
-		
-		compControl.paintObject();
-		
+	public void paintSailboat() {
+		control.paintSailboat();	
+	}
+	
+	public void paintFriends() {
+		control.paintFriends();
+	}
+	
+	public void paintDemonF() {
+		control.paintDemonF();
+	}
+	
+	public void paintDemonS() {
+		control.paintDemonS();
+	}
+	
+	public void paintCart() {
+		control.paintCart();
 	}
 	
 

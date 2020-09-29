@@ -9,15 +9,15 @@ public class DemonFight extends Object {
 	PImage demonF;
 	
 	
-	public DemonFight(int posx, int posy, int sizex, int sizey, PApplet app) {
-		super(posx, posy, sizex, sizey);
+	public DemonFight(PApplet app) {
+		super(app);
 		this.app = app;
 		demonF = app.loadImage("../resources/DemonFight.png");
 	}
 
-
-	public void paintObject() {
-		app.image(demonF, getPosX(), getPosY(), getSizeX(), getSizeY());
+	protected void paintObject() {
+		
+		app.image(demonF, 800, 500);
 	}
 
 }

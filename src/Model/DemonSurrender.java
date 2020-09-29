@@ -9,15 +9,15 @@ public class DemonSurrender extends Object {
 	PImage demonS;
 	
 	
-	public DemonSurrender(int posx, int posy, int sizex, int sizey, PApplet app) {
-		super(posx, posy, sizex, sizey);
+	public DemonSurrender(PApplet app) {
+		super(app);
 		this.app = app;
 		demonS = app.loadImage("../resources/DemonSurrender.png");
 	}
 
+	protected void paintObject() {
 
-	public void paintObject() {
-		app.image(demonS, getPosX(), getPosY(), getSizeX(), getSizeY());
+		app.image(demonS, 200, 350);
 	}
 
 }

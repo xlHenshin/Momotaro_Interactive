@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
-
+	
+	PApplet app;
 	public CompScreen compScreen;
 	public FinalScreen finalScreen;
 	String [] tale;
@@ -48,24 +49,28 @@ public class Main extends PApplet {
 		for (String element : taleWords) {
 			
 			if(element.equals("velero")) {
-				ellipse(40,50,40,40);
 				
+				compScreen.paintSailboat();
 			}
 			
 			if(element.equals("irrumpieron")) {
-				ellipse(100,200,150,150);
+				
+				compScreen.paintFriends();
 			}
 			
 			if(element.equals("siesta")) {
-				rect(500, 500, 100, 100);
+				
+				compScreen.paintDemonF();
 			}
 			
 			if(element.equals("bramaron")) {
-				rect(800, 600, 100, 100);
+				
+				compScreen.paintDemonS();
 			}
 			
 			if(element.equals("monedas")) {
-				ellipse(1100,300, 60, 120);
+				
+				compScreen.paintCart();
 			}
 			
 		}
