@@ -16,7 +16,8 @@ public class Sailboat extends Object {
 	
 	protected void paintObject() {
 		
-		app.image(sailboat, 500, 500);
+		app.image(sailboat, 80, 625);
+		
 	}
 
 }

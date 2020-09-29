@@ -17,7 +17,7 @@ public class DemonSurrender extends Object {
 
 	protected void paintObject() {
 
-		app.image(demonS, 200, 350);
+		app.image(demonS, 1150, 185);
 	}
 
 }

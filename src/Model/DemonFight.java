@@ -17,7 +17,7 @@ public class DemonFight extends Object {
 
 	protected void paintObject() {
 		
-		app.image(demonF, 800, 500);
+		app.image(demonF, 820, 105);
 	}
 
 }

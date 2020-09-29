@@ -16,7 +16,7 @@ public class Friends extends Object {
 
 	protected void paintObject() {
 		
-		app.image(friends, 40, 50);
+		app.image(friends, 450, 415);
 	}
 
 }

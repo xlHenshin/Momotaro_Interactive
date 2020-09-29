@@ -17,7 +17,7 @@ public class Cart extends Object {
 
 	protected void paintObject() {
 		
-		app.image(cart, 1100, 100);
+		app.image(cart, 1000, 406);
 	}
 
 }

@@ -18,7 +18,7 @@ public class CompScreen {
 	}
 	
 	public void paintComposition() {
-		app.image(composition,0,0);
+		app.image(composition,639.5f,359.5f);
 	}
 	
 	public void paintSailboat() {

@@ -45,6 +45,7 @@ public class Main extends PApplet {
 	
 	public void draw() {
 		background (0);
+		imageMode(CENTER);
 		compScreen.paintComposition();
 		for (String element : taleWords) {
 			
@@ -77,7 +78,8 @@ public class Main extends PApplet {
 	}
 	
 	public void mousePressed() {
-		
+		PApplet.println(mouseX);
+		PApplet.println(mouseY);
 	}
 	
 	public void mouseDragged() {
