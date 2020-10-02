@@ -77,10 +77,13 @@ public class Main extends PApplet {
 		background (0);
 		imageMode(CENTER);
 		
-		/*if (interactionCounter == 5) {
-
-			compSwitch = 2;
-		}*/
+		if (interactionCounter == 5) {
+			
+			if (frameCount %60 == 0) {
+				compSwitch = 2;
+			}
+			
+		}
 
 		switch (compSwitch) {
 		case 1:
@@ -171,8 +174,8 @@ public class Main extends PApplet {
 
 
 	public void mouseClicked() {
-		//PApplet.println(mouseX);
-		//PApplet.println(mouseY);
+		PApplet.println(mouseX);
+		PApplet.println(mouseY);
 
 		if (mouseX > 386 && mouseX < 386+140 
 				&& mouseY > 334 && mouseY < 334+158) {
@@ -210,6 +213,15 @@ public class Main extends PApplet {
 			
 			System.out.println(interactionCounter);
 
+		}
+		
+		if (compSwitch==2) {
+			
+			if (mouseX > 583 && mouseX < 583+114
+					&& mouseY > 430 && mouseY < 430+55) {
+				exit ();
+			}
+			
 		}
 	}
 

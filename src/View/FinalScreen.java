@@ -12,10 +12,12 @@ public class FinalScreen {
 		
 		this.app = app;
 		
+		finalscreen = app.loadImage("../resources/FinalScreen.png");
 	}
 	
 	public void paintFinalScreen() {
 		
+		app.image(finalscreen,639.5f,359.5f);
 	}
 	
 }
