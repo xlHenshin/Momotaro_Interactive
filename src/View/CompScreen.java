@@ -26,6 +26,11 @@ public class CompScreen {
 		control.paintSailboat();	
 	}
 	
+	public void dragSailboat() {
+		
+		control.dragSailboat();
+	}
+	
 	public void paintFriends() {
 		control.paintFriends();
 	}
@@ -48,6 +53,10 @@ public class CompScreen {
 	
 	public void paintCart() {
 		control.paintCart();
+	}
+	
+	public void dragCart() {
+		control.dragCart();
 	}
 	
 

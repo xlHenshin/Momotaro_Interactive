@@ -21,6 +21,11 @@ public class Controller {
 		interaction.paintSailboat();	
 	}
 	
+	public void dragSailboat() {
+		
+		interaction.dragSailboat();
+	}
+	
 	public void paintFriends() {
 		interaction.paintFriends();
 	}
@@ -43,6 +48,11 @@ public class Controller {
 	
 	public void paintCart() {
 		interaction.paintCart();
+	}
+	
+	public void dragCart() {
+		
+		interaction.dragCart();
 	}
 	
 }

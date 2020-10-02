@@ -21,9 +21,12 @@ public class Cart extends Object {
 		
 	}
 
-	protected void paintInteraction() {
-		// TODO Auto-generated method stub
+	protected void paintInteraction() {	
+	}
+
+	protected void dragInteraction() {
 		
+	
 	}
 
 }

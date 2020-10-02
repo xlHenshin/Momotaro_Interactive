@@ -26,4 +26,9 @@ public class DemonFight extends Object {
 		app.image(demonFzoom, posX, posY);
 	}
 
+
+	protected void dragInteraction() {
+
+	}
+
 }

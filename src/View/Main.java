@@ -101,7 +101,7 @@ public class Main extends PApplet {
 		case 2:
 			compScreen.demonFInteraction();
 			demonFinteraction = true;
-			if (frameCount %60 == 0) {
+			if (frameCount %30 == 0) {
                 clickInteraction = 0;
 				demonFinteraction = false;
 			} 
@@ -112,7 +112,7 @@ public class Main extends PApplet {
 			
 			compScreen.demonSInteraction();
 			demonSinteraction = true;
-			if (frameCount %60 == 0) {
+			if (frameCount %30 == 0) {
                 clickInteraction = 0;
 				demonSinteraction = false;
 			}
@@ -148,6 +148,19 @@ public class Main extends PApplet {
 	
 	public void mouseDragged() {
 		
+		if (mouseX > 30 && mouseX < 30+332 
+				&& mouseY > 377 && mouseY < 377+317) {
+		compScreen.dragSailboat();
+			
+			
+		}
+		
+		if (mouseX > 603 && mouseX < 603+464 
+				&& mouseY > 355 && mouseY < 355+350) {
+		
+		compScreen.dragCart();
+			
+		}
 	}
 	
 }

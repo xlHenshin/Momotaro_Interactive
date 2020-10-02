@@ -22,8 +22,12 @@ public class Sailboat extends Object {
 
 
 	protected void paintInteraction() {
-		// TODO Auto-generated method stub
 		
+	}
+
+	public void dragInteraction() {
+		setPosX(app.mouseX);
+		setPosY(app.mouseY);
 	}
 
 }

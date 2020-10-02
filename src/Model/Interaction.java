@@ -5,11 +5,12 @@ import processing.core.PApplet;
 public class Interaction extends PApplet{
 
 	PApplet app;
-	public Object sailboat;
+	public Sailboat sailboat;
 	public Object friends;
 	public Object demonFight;
 	public Object demonSurrender;
 	public Object cart;
+
 	
 	public Interaction(PApplet app) {
 		
@@ -19,13 +20,18 @@ public class Interaction extends PApplet{
 		demonFight = new DemonFight(820, 105, app);
 		demonSurrender = new DemonSurrender(1150, 185, app);
 		cart = new Cart(1000, 406, app);
-		
+	
 		
 	}
 	
 	public void paintSailboat() {
 	
 		sailboat.paintObject();
+	}
+	
+	public void dragSailboat() {
+		
+		sailboat.dragInteraction();
 	}
 	
 	
@@ -55,6 +61,11 @@ public class Interaction extends PApplet{
 	public void paintCart() {
 	
 		cart.paintObject();
+	}
+	
+	public void dragCart() {
+		
+		cart.dragInteraction();
 	}
 
 }
