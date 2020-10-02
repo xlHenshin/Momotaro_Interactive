@@ -34,8 +34,16 @@ public class CompScreen {
 		control.paintDemonF();
 	}
 	
+	public void demonFInteraction() {
+		control.demonFInteraction();
+	}
+	
 	public void paintDemonS() {
 		control.paintDemonS();
+	}
+	
+	public void demonSInteraction() {
+		control.demonSInteraction();
 	}
 	
 	public void paintCart() {

@@ -19,6 +19,11 @@ public class Friends extends Object {
 		
 		app.image(friends, posX, posY);
 	}
+
+	protected void paintInteraction() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

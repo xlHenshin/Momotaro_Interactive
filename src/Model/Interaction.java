@@ -20,12 +20,14 @@ public class Interaction extends PApplet{
 		demonSurrender = new DemonSurrender(1150, 185, app);
 		cart = new Cart(1000, 406, app);
 		
+		
 	}
 	
 	public void paintSailboat() {
 	
 		sailboat.paintObject();
 	}
+	
 	
 	public void paintFriends() {
 		
@@ -37,9 +39,17 @@ public class Interaction extends PApplet{
 		demonFight.paintObject();
 	}
 	
+	public void demonFInteraction() {
+		demonFight.paintInteraction();
+	}
+	
 	public void paintDemonS() {
 	
 		demonSurrender.paintObject();
+	}
+	
+	public void demonSInteraction() {
+		demonSurrender.paintInteraction();
 	}
 	
 	public void paintCart() {

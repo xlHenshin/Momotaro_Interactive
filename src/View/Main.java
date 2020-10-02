@@ -11,6 +11,10 @@ public class Main extends PApplet {
 	public FinalScreen finalScreen;
 	String [] tale;
 	ArrayList<String> taleWords;
+	int clickInteraction;
+	
+	boolean demonFinteraction;
+	boolean demonSinteraction;
 	
 	public static void main(String[] args) {
 		
@@ -24,6 +28,11 @@ public class Main extends PApplet {
 	public void setup(){
 		compScreen = new CompScreen(this);
 		finalScreen = new FinalScreen(this);
+		
+		clickInteraction = 0;
+		demonFinteraction = false;
+		demonSinteraction = false;
+		
 		tale = loadStrings("../resources/tale.txt");
 		taleWords = new ArrayList<String>();
 		
@@ -65,12 +74,16 @@ public class Main extends PApplet {
 			
 			if(element.equals("siesta")) {
 				
+				if(demonFinteraction == false) {
 				compScreen.paintDemonF();
+				}
 			}
 			
 			if(element.equals("bramaron")) {
 				
-				compScreen.paintDemonS();
+				if(demonSinteraction == false) {
+					compScreen.paintDemonS();
+					}
 			}
 			
 			if(element.equals("monedas")) {
@@ -78,6 +91,35 @@ public class Main extends PApplet {
 				compScreen.paintCart();
 			}
 			
+		}
+		
+		switch (clickInteraction) {
+		case 1:
+			
+			break;
+			
+		case 2:
+			compScreen.demonFInteraction();
+			demonFinteraction = true;
+			if (frameCount %60 == 0) {
+                clickInteraction = 0;
+				demonFinteraction = false;
+			} 
+			
+			break;
+			
+		case 3:
+			
+			compScreen.demonSInteraction();
+			demonSinteraction = true;
+			if (frameCount %60 == 0) {
+                clickInteraction = 0;
+				demonSinteraction = false;
+			}
+			break;
+
+		default:
+			break;
 		}
 	}
 	
@@ -94,11 +136,13 @@ public class Main extends PApplet {
 		if (mouseX > 716 && mouseX < 716+240 
 			&& mouseY > 28 && mouseY < 28+174) {
 			
+			
+			clickInteraction = 2;
 		}
 		
-		if (mouseX > 716 && mouseX < 716+240 
-				&& mouseY > 28 && mouseY < 28+174) {
-				
+		if (mouseX > 1074 && mouseX < 1074+175 
+				&& mouseY > 79 && mouseY < 79+217) {
+			clickInteraction = 3;
 			}
 	}
 	

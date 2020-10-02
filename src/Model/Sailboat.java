@@ -20,4 +20,10 @@ public class Sailboat extends Object {
 		
 	}
 
+
+	protected void paintInteraction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

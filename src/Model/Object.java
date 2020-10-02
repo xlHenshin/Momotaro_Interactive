@@ -18,4 +18,7 @@ public abstract class Object extends PApplet{
 
 	protected abstract void paintObject();
 	
+	protected abstract void paintInteraction();
+	
+	
 }

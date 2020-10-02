@@ -29,8 +29,16 @@ public class Controller {
 		interaction.paintDemonF();
 	}
 	
+	public void demonFInteraction() {
+		interaction.demonFInteraction();
+	}
+	
 	public void paintDemonS() {
 		interaction.paintDemonS();
+	}
+	
+	public void demonSInteraction() {
+		interaction.demonSInteraction();
 	}
 	
 	public void paintCart() {
