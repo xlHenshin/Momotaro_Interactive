@@ -13,7 +13,7 @@ public class Main extends PApplet {
 	ArrayList<String> taleWords;
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		PApplet.main(Main.class.getName());
 	}
 	
@@ -46,9 +46,13 @@ public class Main extends PApplet {
 	public void draw() {
 		background (0);
 		imageMode(CENTER);
+		
+		
 		compScreen.paintComposition();
+		//compScreen.paintObject();
 		for (String element : taleWords) {
 			
+
 			if(element.equals("velero")) {
 				
 				compScreen.paintSailboat();
@@ -77,9 +81,25 @@ public class Main extends PApplet {
 		}
 	}
 	
-	public void mousePressed() {
+	
+	public void mouseClicked() {
 		PApplet.println(mouseX);
 		PApplet.println(mouseY);
+		
+		if (mouseX > 386 && mouseX < 386+140 
+				&& mouseY > 334 && mouseY < 334+158) {
+				
+			}
+		
+		if (mouseX > 716 && mouseX < 716+240 
+			&& mouseY > 28 && mouseY < 28+174) {
+			
+		}
+		
+		if (mouseX > 716 && mouseX < 716+240 
+				&& mouseY > 28 && mouseY < 28+174) {
+				
+			}
 	}
 	
 	public void mouseDragged() {

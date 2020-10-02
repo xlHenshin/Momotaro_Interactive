@@ -8,15 +8,18 @@ public class Friends extends Object {
 	PApplet app;
 	PImage friends;
 	
-	public Friends(PApplet app) {
-		super(app);
+	public Friends(int posx, int posy, PApplet app) {
+		super(posx, posy, app);
 		this.app = app;
 		friends = app.loadImage("../resources/Friends.png");
-	}
 
+	}
+	
 	protected void paintObject() {
 		
-		app.image(friends, 450, 415);
+		app.image(friends, posX, posY);
 	}
+	
+	
 
 }

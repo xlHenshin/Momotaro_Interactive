@@ -14,12 +14,13 @@ public class CompScreen {
 		
 		this.app = app;
 		control = new Controller(app);
-		composition = app.loadImage("../resources/Composition.png");
+		composition = app.loadImage("../resources/CompositionFix.png");
 	}
 	
 	public void paintComposition() {
 		app.image(composition,639.5f,359.5f);
 	}
+	
 	
 	public void paintSailboat() {
 		control.paintSailboat();	

@@ -16,7 +16,7 @@ public class Controller {
 		
 		
 	}
-	
+
 	public void paintSailboat() {
 		interaction.paintSailboat();	
 	}

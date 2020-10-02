@@ -14,14 +14,13 @@ public class Interaction extends PApplet{
 	public Interaction(PApplet app) {
 		
 		this.app=app;
-		sailboat = new Sailboat(app);
-		friends = new Friends(app);
-		demonFight = new DemonFight(app);
-		demonSurrender = new DemonSurrender(app);
-		cart = new Cart(app);
+		sailboat = new Sailboat(80, 625, app);
+		friends = new Friends(450, 415, app);
+		demonFight = new DemonFight(820, 105, app);
+		demonSurrender = new DemonSurrender(1150, 185, app);
+		cart = new Cart(1000, 406, app);
 		
 	}
-
 	
 	public void paintSailboat() {
 	

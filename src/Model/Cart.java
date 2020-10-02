@@ -8,16 +8,17 @@ public class Cart extends Object {
 	PApplet app;
 	PImage cart;
 	
-	
-	public Cart (PApplet app) {
-		super(app);
+	public Cart(int posx, int posy, PApplet app) {
+		super(posx, posy, app);
 		this.app = app;
 		cart= app.loadImage("../resources/Cart.png");
 	}
 
 	protected void paintObject() {
 		
-		app.image(cart, 1000, 406);
+		app.image(cart, posX, posY);
+		
+		
 	}
 
 }

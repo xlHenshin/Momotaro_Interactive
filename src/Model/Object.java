@@ -6,7 +6,13 @@ public abstract class Object extends PApplet{
 
 	PApplet app;
 	
-	public Object(PApplet app) {
+	protected int posX;
+	protected int posY;
+	
+	public Object(int posx, int posy, PApplet app) {
+		
+		this.posX = posx;
+		this.posY = posy;
 		this.app = app;
 	}
 
