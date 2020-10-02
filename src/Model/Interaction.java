@@ -9,7 +9,7 @@ public class Interaction extends PApplet{
 	public Object friends;
 	public Object demonFight;
 	public Object demonSurrender;
-	public Object cart;
+	public Cart cart;
 
 	
 	public Interaction(PApplet app) {
@@ -38,6 +38,10 @@ public class Interaction extends PApplet{
 	public void paintFriends() {
 		
 		friends.paintObject();
+	}
+	
+	public void friendsInteraction() {
+		friends.paintInteraction();
 	}
 	
 	public void paintDemonF() {

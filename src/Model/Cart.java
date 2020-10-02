@@ -25,7 +25,8 @@ public class Cart extends Object {
 	}
 
 	protected void dragInteraction() {
-		
+		setPosX(app.mouseX);
+		setPosY(app.mouseY);
 	
 	}
 

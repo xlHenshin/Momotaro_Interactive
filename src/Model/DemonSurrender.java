@@ -26,9 +26,4 @@ public class DemonSurrender extends Object {
 		app.image(demonSzoom, posX, posY);
 	}
 
-
-	protected void dragInteraction() {
-	
-	}
-
 }

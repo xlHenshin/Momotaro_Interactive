@@ -30,6 +30,10 @@ public class Controller {
 		interaction.paintFriends();
 	}
 	
+	public void friendsInteraction() {
+		interaction.friendsInteraction();
+	}
+	
 	public void paintDemonF() {
 		interaction.paintDemonF();
 	}

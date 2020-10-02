@@ -35,6 +35,10 @@ public class CompScreen {
 		control.paintFriends();
 	}
 	
+	public void friendsInteraction() {
+		control.friendsInteraction();
+	}
+	
 	public void paintDemonF() {
 		control.paintDemonF();
 	}

@@ -20,7 +20,6 @@ public abstract class Object extends PApplet{
 	
 	protected abstract void paintInteraction();
 	
-	protected abstract void dragInteraction();
 
 	public int getPosX() {
 		return posX;

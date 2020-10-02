@@ -12,7 +12,9 @@ public class Main extends PApplet {
 	String [] tale;
 	ArrayList<String> taleWords;
 	int clickInteraction;
+	int compSwitch;
 	
+	boolean friendsInteraction;
 	boolean demonFinteraction;
 	boolean demonSinteraction;
 	
@@ -30,6 +32,8 @@ public class Main extends PApplet {
 		finalScreen = new FinalScreen(this);
 		
 		clickInteraction = 0;
+		compSwitch = 1;
+		friendsInteraction = false;
 		demonFinteraction = false;
 		demonSinteraction = false;
 		
@@ -56,71 +60,92 @@ public class Main extends PApplet {
 		background (0);
 		imageMode(CENTER);
 		
-		
-		compScreen.paintComposition();
-		//compScreen.paintObject();
-		for (String element : taleWords) {
-			
-
-			if(element.equals("velero")) {
-				
-				compScreen.paintSailboat();
-			}
-			
-			if(element.equals("irrumpieron")) {
-				
-				compScreen.paintFriends();
-			}
-			
-			if(element.equals("siesta")) {
-				
-				if(demonFinteraction == false) {
-				compScreen.paintDemonF();
-				}
-			}
-			
-			if(element.equals("bramaron")) {
-				
-				if(demonSinteraction == false) {
-					compScreen.paintDemonS();
-					}
-			}
-			
-			if(element.equals("monedas")) {
-				
-				compScreen.paintCart();
-			}
-			
-		}
-		
-		switch (clickInteraction) {
+		switch (compSwitch) {
 		case 1:
+			
+			compScreen.paintComposition();
+
+			for (String element : taleWords) {
+				
+
+				if(element.equals("velero")) {
+					
+					compScreen.paintSailboat();
+				}
+				
+				if(element.equals("irrumpieron")) {
+					
+					if(friendsInteraction == false) {
+						compScreen.paintFriends();
+						}
+					
+				}
+				
+				if(element.equals("siesta")) {
+					
+					if(demonFinteraction == false) {
+					compScreen.paintDemonF();
+					}
+				}
+				
+				if(element.equals("bramaron")) {
+					
+					if(demonSinteraction == false) {
+						compScreen.paintDemonS();
+						}
+				}
+				
+				if(element.equals("monedas")) {
+					
+					compScreen.paintCart();
+				}
+				
+			}
+			
+			switch (clickInteraction) {
+			case 1:
+				
+				friendsInteraction = true;
+				compScreen.friendsInteraction();
+				clickInteraction = 0;
+				break;
+				
+			case 2:
+				compScreen.demonFInteraction();
+				demonFinteraction = true;
+				if (frameCount %30 == 0) {
+	                clickInteraction = 0;
+					demonFinteraction = false;
+				} 
+				
+				break;
+				
+			case 3:
+				
+				compScreen.demonSInteraction();
+				demonSinteraction = true;
+				if (frameCount %30 == 0) {
+	                clickInteraction = 0;
+					demonSinteraction = false;
+				}
+				break;
+
+			default:
+				break;
+			}
 			
 			break;
 			
 		case 2:
-			compScreen.demonFInteraction();
-			demonFinteraction = true;
-			if (frameCount %30 == 0) {
-                clickInteraction = 0;
-				demonFinteraction = false;
-			} 
 			
-			break;
+			finalScreen.paintFinalScreen();
 			
-		case 3:
-			
-			compScreen.demonSInteraction();
-			demonSinteraction = true;
-			if (frameCount %30 == 0) {
-                clickInteraction = 0;
-				demonSinteraction = false;
-			}
 			break;
 
 		default:
 			break;
 		}
+		
 	}
 	
 	
@@ -130,7 +155,7 @@ public class Main extends PApplet {
 		
 		if (mouseX > 386 && mouseX < 386+140 
 				&& mouseY > 334 && mouseY < 334+158) {
-				
+			clickInteraction = 1;
 			}
 		
 		if (mouseX > 716 && mouseX < 716+240 
