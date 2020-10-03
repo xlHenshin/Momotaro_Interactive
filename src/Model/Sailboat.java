@@ -25,6 +25,8 @@ public class Sailboat extends Object {
 		
 	}
 
+	//This method is used in mouseDragged.
+	//The object will take the position of the mouse each time the mouse is clicked in a sensitive zone.
 	public void dragInteraction() {
 		setPosX(app.mouseX);
 		setPosY(app.mouseY);

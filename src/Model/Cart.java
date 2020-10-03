@@ -24,6 +24,7 @@ public class Cart extends Object {
 	protected void paintInteraction() {	
 	}
 
+	//The object will take the position of the mouse each time the mouse is clicked in a sensitive zone.
 	protected void dragInteraction() {
 		setPosX(app.mouseX);
 		setPosY(app.mouseY);
