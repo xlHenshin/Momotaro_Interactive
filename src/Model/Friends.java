@@ -21,6 +21,7 @@ public class Friends extends Object {
 	protected void paintObject() {
 		
 		app.image(friends, posX, posY);
+
 	}
 
 	protected void paintInteraction() {

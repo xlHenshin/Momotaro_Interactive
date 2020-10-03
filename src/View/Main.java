@@ -10,6 +10,7 @@ public class Main extends PApplet {
 	public CompScreen compScreen;
 	public FinalScreen finalScreen;
 	String [] tale;
+	ArrayList<String> finalTale;
 	ArrayList<String> taleWords;
 	int clickInteraction;
 	int compSwitch;
@@ -48,6 +49,7 @@ public class Main extends PApplet {
 		demonFinteraction = false;
 		demonSinteraction = false;
 
+		//These booleans allow one interaction to be added at a time (in interactionCounter).
 		firstInteraction = false;
 		secondInteraction = false;
 		thirdInteraction = false;
@@ -56,15 +58,15 @@ public class Main extends PApplet {
 
 		tale = loadStrings("../resources/tale.txt");
 		taleWords = new ArrayList<String>();
+		finalTale = new ArrayList<String>();
 
 		for (int i = 0; i < tale.length; i++) {
 			String [] tempArray = tale[i].split(" ");
-
+			
 			for (int j = 0; j < tempArray.length; j++) {
 				taleWords.add(tempArray[j]);
 			}
 		}
-
 
 		for (String element : taleWords) {
 			System.out.println(element);
@@ -77,6 +79,8 @@ public class Main extends PApplet {
 		background (0);
 		imageMode(CENTER);
 		
+		// If user does all the interactions (5 in total), compSwitch value will be 2.
+		//Then Final Screen will be displayed.
 		if (interactionCounter == 5) {
 			
 			if (frameCount %60 == 0) {
@@ -85,11 +89,14 @@ public class Main extends PApplet {
 			
 		}
 
+		//This switch changes the screens between Composition Screen and Final Screen.
+		//In case 1, all interactive objects are painted.
 		switch (compSwitch) {
 		case 1:
 
 			compScreen.paintComposition();
-
+			
+			//This for finds 5 keywords to paint the objects
 			for (String element : taleWords) {
 
 
@@ -107,14 +114,16 @@ public class Main extends PApplet {
 				}
 
 				if(element.equals("siesta")) {
-
-					if(demonFinteraction == false) {
+					
+					//demonFinteraction boolean makes the object disappear when the interaction is activated
+					if(demonFinteraction == false) {	
 						compScreen.paintDemonF();
 					}
 				}
 
 				if(element.equals("bramaron")) {
-
+					
+					//same as the previous boolean
 					if(demonSinteraction == false) {
 						compScreen.paintDemonS();
 					}
@@ -127,19 +136,22 @@ public class Main extends PApplet {
 
 			}
 
+			// This if receives a signal (activateFriends) from mouseDragged to paint the first interaction.
 			if (activateFriends==1) {
 				friendsInteraction = true;
 				compScreen.friendsInteraction();
 			}
 
+			// clickInteraction switch paints third and fourth interactions.
+			// Each case receives a signal to hide the object while the interaction is happening.
 			switch (clickInteraction) {
 
 			case 1:
 				compScreen.demonFInteraction();
 				demonFinteraction = true;
-				if (frameCount %30 == 0) {
+				if (frameCount %30 == 0) {	//The interaction lasts half a second
 					clickInteraction = 0;
-					demonFinteraction = false;
+					demonFinteraction = false;	//Hides the object
 				} 
 
 				break;
@@ -148,9 +160,9 @@ public class Main extends PApplet {
 
 				compScreen.demonSInteraction();
 				demonSinteraction = true;
-				if (frameCount %30 == 0) {
+				if (frameCount %30 == 0) {	//The interaction lasts half a second
 					clickInteraction = 0;
-					demonSinteraction = false;
+					demonSinteraction = false;	//Hides the object
 				}
 				break;
 
@@ -159,11 +171,12 @@ public class Main extends PApplet {
 			}
 
 			break;
-
+			
+		//compSwitch case 2
 		case 2:
 
 			finalScreen.paintFinalScreen();
-
+			
 			break;
 
 		default:
@@ -172,10 +185,11 @@ public class Main extends PApplet {
 
 	}
 
-
+	
+	//mouseCliccked method checks clicks in the screen in a specific sensitive zone (interactive objects).
+	//When clicked, it sends a message to draw method to paint interactions, while static objects in the composition disappear.
+	//It is necessary to send a message to draw method because clicks last less than half a second.
 	public void mouseClicked() {
-		PApplet.println(mouseX);
-		PApplet.println(mouseY);
 
 		if (mouseX > 386 && mouseX < 386+140 
 				&& mouseY > 334 && mouseY < 334+158) {
@@ -215,6 +229,7 @@ public class Main extends PApplet {
 
 		}
 		
+		//This click only works in the Final Screen.
 		if (compSwitch==2) {
 			
 			if (mouseX > 583 && mouseX < 583+114
@@ -224,7 +239,10 @@ public class Main extends PApplet {
 			
 		}
 	}
-
+	
+	//This method calls drag interactions methods from model package (specifically from each object).
+	//When mouse is pressed in a specific sensitive zone, the object will follow mouse position.
+	
 	public void mouseDragged() {
 
 		if (mouseX > 30 && mouseX < 30+332 
